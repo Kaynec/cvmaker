@@ -6,11 +6,12 @@ import Education from "./components/education";
 import Skills from "./components/skills";
 import Experience from "./components/experience";
 import "./styles/preview.scss";
-import { useScreenshot } from "use-react-screenshot";
-import { jsPDF } from "jspdf";
+import ReactToPdf from "react-to-pdf";
+//
+
 const App = (props) => {
   const [prevmode, setPrevmode] = useState(false);
-  const [image, takeScreenshot] = useScreenshot();
+  // ref for creating pdf from container div
   const container = useRef(null);
   // making button visible or not
   const styleVisible = {
@@ -19,13 +20,9 @@ const App = (props) => {
   const styleNotVisile = {
     display: "none",
   };
-  const getImage = () => {
-    takeScreenshot(container.current);
-    console.log(image);
-  };
+  //  main container and two buttons (one is a switch)
   return (
     <>
-      <img src={image} style={{ width: 500 }} alt="someImage" />
       <label className="label">
         <div className="toggle">
           <input
@@ -43,14 +40,21 @@ const App = (props) => {
           {prevmode ? "Previw Mode" : "Working Mode"}
         </div>
         <div>
-          <button
-            onClick={getImage}
-            style={prevmode ? styleVisible : styleNotVisile}
-          >
-            Get Pdf
-          </button>
+          <div>
+            <ReactToPdf targetRef={container} filename="div-blue.pdf">
+              {({ toPdf }) => (
+                <button
+                  onClick={toPdf}
+                  style={prevmode ? styleVisible : styleNotVisile}
+                >
+                  Get Pdf
+                </button>
+              )}
+            </ReactToPdf>
+          </div>
         </div>
       </label>
+      {/* The components  */}
       <div id="container" ref={container}>
         <General working={prevmode} />
         <Education working={prevmode} />
@@ -60,15 +64,4 @@ const App = (props) => {
     </>
   );
 };
-
 export default App;
-
-function generatePDF(imgPath) {
-  console.log(imgPath);
-  // var img = new Image();
-  // img.src = imgPath;
-
-  // var doc = new jsPDF("p", "mm", "a3"); // optional parameters
-  // doc.addImage(img, "JPEG", 1, 2);
-  // doc.save("new.pdf");
-}

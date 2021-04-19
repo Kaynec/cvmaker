@@ -2,6 +2,7 @@
 import React from "react";
 
 const EducationValueOrInput = (props) => {
+  // object for visibility
   const styleNotVisible = {
     maxHeight: 0,
     visibility: "hidden",
@@ -14,7 +15,9 @@ const EducationValueOrInput = (props) => {
     opacity: 1,
     transition: "all .4s ease",
   };
+  // map over the given array
   return props.educationArray.map((item) => {
+    //  it the completed state is false
     if (item.completed === false) {
       return (
         <div
@@ -88,6 +91,7 @@ const EducationValueOrInput = (props) => {
           </div>
         </div>
       );
+      // if the completed state is true
     } else if (item.completed === true) {
       return (
         <div

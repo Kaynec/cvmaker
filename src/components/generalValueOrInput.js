@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from "react";
-
+// the initial state obj
 const initialInput = {
   fName: "",
   lName: "",
@@ -11,7 +11,7 @@ const initialInput = {
 };
 
 const ValueOrInput = (props) => {
-  // ToggleCompleted
+  // ToggleCompleted Status
   const toggleStateCompleted = (e) => {
     e.preventDefault();
     if (e.target.id === "Change")
@@ -32,7 +32,7 @@ const ValueOrInput = (props) => {
       }
     }
   };
-
+  // display form error
   const formError = () => {
     let { fName, lName, email, pNumber } = input;
     if (!fName || !lName || !email) return "Please Enter All Fields";
@@ -42,17 +42,17 @@ const ValueOrInput = (props) => {
 
     return false;
   };
-
+  //  the state for complete and the generla input
   const [completed, setCompleted] = useState(false);
   const [input, setInput] = useState(initialInput);
-
+  // reset input
   const resetInput = () => {
     setInput((prev) => ({
       ...prev,
       ...initialInput,
     }));
   };
-
+  // on change use this function
   const onChange = (e) => {
     props.sharedState(e);
     setInput((prev) => ({
@@ -93,6 +93,7 @@ const ValueOrInput = (props) => {
         </div>
       </>
     );
+    // if state isn't completed
   } else if (completed === false) {
     return (
       <>

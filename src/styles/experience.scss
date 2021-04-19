@@ -106,3 +106,12 @@
   padding: 2rem;
   background: #f5f5f5;
 }
+.experienceForm {
+  div {
+    > div {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+  }
+}

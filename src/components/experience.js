@@ -13,7 +13,7 @@ const initialState = {
   completed: false,
 };
 const Experience = (props) => {
-  // The States
+  // The States for visibility and the array that contains the objects
   const [experienceArr, setExperienceArr] = useState(() => [initialState]);
   const [visible, setVisible] = useState(() => true);
 
@@ -46,7 +46,7 @@ const Experience = (props) => {
   };
 
   //
-  //
+  // for adding a empty experience object
   const addExperience = () => {
     const currentObj = {
       name: "",
@@ -60,7 +60,7 @@ const Experience = (props) => {
     setVisible((prev) => true);
   };
   //
-  //
+  // this  function reset tha target experience object
   const resetExperience = (e) => {
     const experienceArrCopy = experienceArr.map((item) => {
       if (item.id === e.target.id) {
@@ -79,7 +79,7 @@ const Experience = (props) => {
     setExperienceArr((prev) => experienceArrCopy);
   };
   //
-  //
+  // removing the experience object from state
   const removeExperience = (e) => {
     const experienceArrCopy = experienceArr.filter(
       (item) => item.id !== e.target.id
@@ -87,7 +87,7 @@ const Experience = (props) => {
     setExperienceArr((prev) => experienceArrCopy);
   };
   //
-  //
+  // on change for out form
   const onChange = (e) => {
     const shallowCopy = experienceArr.map((item) => {
       if (item.id === e.target.id) {

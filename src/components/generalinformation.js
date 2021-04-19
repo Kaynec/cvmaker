@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import "../styles/general.scss";
 import ValueOrInput from "./generalValueOrInput";
-
+// The general Component
 const General = (props) => {
+  // Two States (one  for style and the other one is equal to that of child)
   const [divIsVisible, setDivIsVisible] = useState(true);
   const [input, setInput] = useState({
     fName: "",
@@ -12,6 +13,7 @@ const General = (props) => {
     pNumber: "",
     description: "",
   });
+  //  get the state of chid components (generalValueOrInput)
   const toggleVisible = () => setDivIsVisible((divIsVisible) => !divIsVisible);
   const getChildState = (e) => {
     setInput((prev) => ({
@@ -20,7 +22,8 @@ const General = (props) => {
       inputError: "",
     }));
   };
-  //
+  // // // // // //
+  // if the app is one working mode
   if (props.working === true) {
     return (
       <>
@@ -28,9 +31,14 @@ const General = (props) => {
           <div>
             <p>
               {input.fName}
-              {input.lName}
+              <span style={{ marginLeft: 6, fontSize: "2.5rem" }}>
+                {input.lName}
+              </span>
             </p>
-            <span>{input.pNumber}</span>,<span>{input.email}</span>
+            <span>
+              {input.pNumber}
+              {input.email}
+            </span>
           </div>
           <div>
             Description
@@ -40,6 +48,7 @@ const General = (props) => {
         </div>
       </>
     );
+    // if the app is not working mode
   } else {
     return (
       <div id="General">

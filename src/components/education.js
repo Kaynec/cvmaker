@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "../styles/education.scss";
 import EducationValueOrInput from "./educationValueOrInput";
 import uniqid from "uniqid";
-
+// initial state object
 const initialState = {
   schoolName: "",
   degree: " ",
@@ -13,8 +13,10 @@ const initialState = {
   completed: false,
 };
 const Education = (props) => {
+  // state for visibility and the array that holds education objects
   const [visible, setVisible] = useState(true);
   const [educationArr, setEducationArr] = useState([initialState]);
+  // use this on change
   const onChildChange = (e) => {
     const copy = educationArr.map((item) => {
       if (item.id === e.target.id) {
@@ -28,7 +30,7 @@ const Education = (props) => {
 
     setEducationArr((prev) => copy);
   };
-
+  // change state of child
   const toggleChildState = (e) => {
     const copy = educationArr.map((item) => {
       if (item.id === e.target.id) {
@@ -38,7 +40,7 @@ const Education = (props) => {
     });
     setEducationArr(copy);
   };
-
+  // reset childs data
   const resetChildData = (e) => {
     const copy = educationArr.map((item) => {
       if (item.id === e.target.id) {
@@ -62,7 +64,7 @@ const Education = (props) => {
     const copy = educationArr.filter((item) => item.id !== e.target.id);
     setEducationArr(copy);
   };
-
+  // add a new education object
   const incrementState = () => {
     setVisible((prev) => true);
     const tempObj = {
@@ -76,7 +78,7 @@ const Education = (props) => {
 
     setEducationArr((prev) => [...prev, tempObj]);
   };
-
+  // if app is working mode
   if (props.working === true) {
     return (
       <>
@@ -101,6 +103,7 @@ const Education = (props) => {
       </>
     );
   } else {
+    // if app is in preview mode
     return (
       <>
         <div id="education">
@@ -118,7 +121,7 @@ const Education = (props) => {
               <span style={{ marginLeft: 150 }} class="gg-arrow-down"></span>
             )}
           </div>
-
+          {/* the child components that renders everything  */}
           <EducationValueOrInput
             className
             educationArray={educationArr}

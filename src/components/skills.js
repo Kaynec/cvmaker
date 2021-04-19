@@ -13,6 +13,7 @@ const Skills = (props) => {
     });
   };
   const handleSubmit = (e) => {
+    if (!skiil) return;
     const currentTask = {
       name: skiil,
       id: uniqid(),
