@@ -1,0 +1,136 @@
+#education {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 1.15rem;
+    cursor: pointer;
+    margin-top:2rem  ;
+    background:#F5F5F5;
+    
+    #addEducation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+            outline: none;
+            background: transparent;
+            color: black;
+            border: 2px solid teal;
+            cursor: pointer;
+            :hover{
+                background: blanchedalmond;
+            }
+            :active{
+                color: greenyellow;
+            }
+            margin-top: 2rem;
+        }
+    }
+    .educationData {
+        width: 100%;
+        > div {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        p{
+            font-size: 1.5rem;
+        }
+        button{
+            outline: none;
+            background: transparent;
+            color: black;
+            border: 2px solid teal;
+            cursor: pointer;
+            :hover{
+                background: blanchedalmond;
+            }
+            :active{
+                color: greenyellow;
+            }
+            margin-top: 2rem;
+        }
+    }
+    }
+    
+    .divForm {
+        button {
+            margin: .5rem 0 ;
+            margin-inline: .25rem;
+        }
+        width: 100%;
+        > div:first-child{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            > div {
+                display: flex;
+                width: 100%;
+                input {
+                    width: 35%;
+                }
+                label {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+.divForm  > div {
+    width: 100%;
+    > div {
+    justify-content: center;
+    align-items: center;
+    margin-top: .5rem;
+    button{
+        outline: none;
+        background: transparent;
+        color: black;
+        border: 2px solid teal;
+        cursor: pointer;
+        :hover{
+            background: blanchedalmond;
+        }
+        :active{
+            color: greenyellow;
+        }
+    }
+    }
+}
+
+#education > div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    p {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    background:#f7f4f4;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius:  4%;
+
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            margin-left: .4rem;
+            font-size: 5rem;
+        }
+    }
+     span{
+        margin-left: 14%;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+     span:hover{
+        color: rgba(10, 4, 4, 0.597);
+        transform: scale(1.1);
+        font-weight: lighter;
+    }
+}

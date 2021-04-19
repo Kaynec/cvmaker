@@ -1,0 +1,33 @@
+#container {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 10vh;
+  width: 50%;
+  flex-direction: column;
+}
+@media screen and (max-width: 525px) {
+  #container {
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    margin-inline: auto;
+
+    > div {
+      justify-self: center;
+      align-self: center;
+      margin-inline: auto;
+    }
+
+    #General {
+      justify-self: center;
+      align-self: center;
+      margin-inline: auto;
+    }
+
+    #education {
+      justify-self: center;
+      align-self: center;
+      margin-inline: auto;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.generalPreview {
+  background: #f5f5f5c6;
+  transition: all 0.2s;
+  > div:first-child {
+    text-align: center;
+    padding-top: 2rem;
+    p {
+      font-size: 2.5rem;
+    }
+
+    span {
+      font-size: 1.2rem;
+      margin-inline: 0.4rem;
+    }
+  }
+
+  > div:nth-child(2) {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    padding: 3rem;
+    p {
+      font-size: 1.3rem;
+      word-wrap: break-word;
+    }
+  }
+}
+.educationPreview {
+  background: #f5f5f5c6;
+  transition: all 0.2s;
+  font-size: 1.5rem;
+  padding: 3rem;
+  p {
+    font-size: 1.7rem;
+    margin-left: 0.2rem;
+    display: flex;
+    align-items: center;
+    i {
+      margin-left: 1rem;
+    }
+  }
+
+  ul {
+    list-style-type: square;
+    margin-left: 2rem;
+
+    li {
+      ul {
+        list-style-type: circle;
+      }
+    }
+  }
+}
+
+.previewSkills {
+  transition: all 0.2s;
+  width: 90.6%;
+  padding: 3rem;
+  background: #f5f5f5c6;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  > div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0.8rem;
+    span {
+      padding: 0.7rem;
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    font-size: 2rem;
+    margin-left: 0.2rem;
+    border-bottom: 0.2rem solid black;
+    display: flex;
+    align-items: center;
+    i {
+      margin-left: 4.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.experiencePreview {
+  background: #f5f5f5c6;
+  padding: 6rem 3rem;
+  margin-bottom: 5rem;
+  p {
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    i {
+      margin-left: 1rem;
+    }
+  }
+
+  ul {
+    list-style-type: square;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+
+    li {
+      ul {
+        list-style-type: circle;
+      }
+    }
+  }
+}
